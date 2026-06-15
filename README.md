@@ -7,8 +7,6 @@ This repository documents my hands-on investigation of debris flow data
 as part of my preparation for a PhD position in computer vision applied 
 to natural hazards at ETH Zurich.
 
----
-
 ## What is a debris flow?
 
 A debris flow is a rapid mixture of water, mud, rocks and wood that rushes 
@@ -52,13 +50,47 @@ On the LiDAR point clouds:
 |--------|-------------|
 | `scripts/explore.py` | Visualize point clouds and camera frames |
 
-### How to run
+## Getting Started
+
+### 1. Clone this repository
+
+```bash
+git clone https://github.com/MuzafferPro/deflow-exploration.git
+cd deflow-exploration
+```
+
+### 2. Clone the original DeFlow repository (for reference)
+
+```bash
+git clone https://github.com/prs-eth/DeFlow.git
+```
+
+### 3. Download the DeFlow dataset
+
+```bash
+wget --no-check-certificate https://share.phys.ethz.ch/~gsg/DeFlow/DeFlow_Dataset.zip
+unzip DeFlow_Dataset.zip
+```
+
+### 4. Download the pretrained checkpoint
+
+```bash
+wget --no-check-certificate https://share.phys.ethz.ch/~gsg/DeFlow/checkpoint.zip
+unzip checkpoint.zip
+```
+
+### 5. Set up the Python environment
 
 ```bash
 python3 -m venv deflow_env
 source deflow_env/bin/activate
 pip install open3d numpy matplotlib opencv-python
-python3 deflow-exploration/scripts/explore.py
+```
+
+### 6. Run the exploration script
+
+```bash
+python3 scripts/explore.py
 ```
 
 ## Why this matters
@@ -78,5 +110,5 @@ as a personal research exercise.
 ## References
 
 - Zhu et al., DeFlow: Self-supervised 3D Motion Estimation of Debris Flow, CVPRW 2023 Best Paper Award
-- ETH Zurich Engineering Geology Group
+- ETH Zurich Engineering Geology Group : https://github.com/prs-eth/DeFlow
 - Dataset: Illgraben catchment, Switzerland
